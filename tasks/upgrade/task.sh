@@ -18,7 +18,7 @@ rlJournalStart
             if dnf repolist | grep testing-farm-tag-repository; then
                 rlRun "dnf config-manager setopt testing-farm-tag-repository.enabled=0"
             fi
-            rlRun "dnf system-upgrade download --releasever=$TARGET -y" 0 "Download new Fedora packages"
+            rlRun "dnf system-upgrade download --disablerepo='*beaker*' --releasever=$TARGET -y" 0 "Download new Fedora packages"
             rlRun "tmt-reboot -c \"dnf5 -y offline reboot\" -t 1800" 0 "Start actual upgrade"
         else
             rlLog "Successfully rebooted"
