@@ -8,5 +8,7 @@ provision:
 environment:
     SOURCE: 44
     TARGET: 45
+    #COMPOSE_URL: "http://download.devel.redhat.com/rhel-10/nightly/RHEL-10/latest-RHEL-10.3/"
+    COMPOSE_URL: "https://kojipkgs.fedoraproject.org/compose/45/Fedora-45-20261021.0/"
 execute:
     how: tmt
